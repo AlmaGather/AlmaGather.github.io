@@ -1,15 +1,87 @@
 <!DOCTYPE html>
+
 <html>
+
+
+    <!--- document head --->
     <head>
-        <title>Your Title Here</title>
+        
+        <title> Alma Gather </title>
+
+        <!--- link to style sheet --->
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--- script to enable MathJax --->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     </head>
+
+
+    <!--- main body of the page --->
     <body>
-        <!-- Your content goes here -->
 
-        <h1>This is a Heading</h1>
+        <!--- main heading at the top of the page--->
+        <h1>
+            Alma Gather
+        </h1>
 
-        <p>This is a paragraph.</p>
+        <!--- brief description at the top of the page --->
+        <header>
+            Personal blog and collection of interesting things.
+        </header>
 
-        <a href="https://example.com">This is a link</a>
+        <!--- main box containing all links to main content pages --->
+        <div class="main_box">
+            <div class="container">
+                <a href="pages/mathematics/mathematics_index.html">
+                    <p> Mathematics </p>
+                    <img src="img/kummer_surface.png" style="width: 100%;">
+                </a>
+            </div>
+            <div class="container">
+                <a href="pages/philosophy/philosophy_index.html">
+                    <p> Philosophy </p>
+                    <img src="img/nagarjuna.jpg" style="width: 100%; heigh: 100%;">
+                </a>
+            </div>
+            <div class="container">
+                <a href="pages/art/art_index.html">
+                    <p> Art </p>
+                    <img src="img/escher.jpg" style="width: 100%; heigh: 100%;">
+                </a>
+            </div>
+            <div class="container">
+                <a href="pages/adventures/adventures_index.html">
+                    <p> Adventure </p>
+                    <img src="img/burnaby_mtn.jpg" style="width: 100%; heigh: 100%;">
+                </a>
+            </div>     
+        </div>
+        
+        <!--- recent posts heading --->
+        <h1>
+            Recent Posts:
+        </h1>
+
+        <!--- list of recent post previews --->
+        <ul>
+            <li>
+                <div class="post_preview">
+                    <a href="index.html">
+                        This is a test post...
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="post_preview">
+                    <a href="index.html">
+                        This is another test post...
+                    </a>
+                </div>
+            </li>
+        <ul>
+
     </body>
+
 </html>
