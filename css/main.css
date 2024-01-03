@@ -1,0 +1,100 @@
+/* Color pallette from darkest to lightest:
+Hex:        RGB:
+#01161e     (1,22,30)
+#09435a     (9,67,90)
+#4e7d8e     (78,125,142)
+#9cc2b8     (156,194,184)
+#e1fdd5     (225,253,213)
+
+
+/* Style of the page background */
+
+body {
+    background-color: #e1fdd5;
+    }
+
+
+/* Style of main heading at the top of the page an the description beneath it */
+
+h1 {
+    font-size: 45px;
+    background-color: #9cc2b8;
+    color: #01161e;
+    text-align: center;
+    }
+header {
+    font-size: 24px;
+    color: #01161e;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    }
+
+
+/* Style of main content box in the middle of the front page and the containers inside of it */
+
+.main_box {
+    text-align: center;
+    }
+.container {
+    font-size: 24px;
+    display: inline-block;
+    text-align: center;
+    background-color: #4e7d8e;
+    border: 10px solid #9cc2b8;
+    width: 15%;
+    margin: 40px;
+    padding: 10px;
+    }
+.container a {
+    color: #e1fdd5;
+    }
+
+
+/* Style of a post preview */
+
+.post_preview {
+    font-size: 24px;
+    display: block;
+    background-color: #4e7d8e;
+    border: 10px solid #9cc2b8;
+    margin: 40px;
+    padding: 10px;
+    }
+.post_preview a {
+    color: #e1fdd5;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
