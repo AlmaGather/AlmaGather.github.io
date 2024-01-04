@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+    <!--- document head --->
+    <head>
+        
+        <title> Mathematics </title>
+
+        <!--- link to style sheet --->
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <!--- script to enable MathJax --->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    </head>
+
+    <!--- main body of the page --->
+    <body>
+
+        <!--- main heading at the top of the page --->
+        <h1>
+            Alma Gather - Mathematics
+        </h1>
+
+        <header>
+            Rings of Integers of Quadratic Number Fields
+        </header>
+
+        <article class="blog_post">
+            <p>
+                I start a graduate level Algebraic Number Theory course this month, and as such, I thought it may be useful to work through an easy motivating example now. It's my understanding that the main goal of this course will be to look at "factorization" in algebraic number fields and study the extent to which <em> unique </em> factorization fails. To be able to talk about factorization in a field at all, we need to define the notion of a <em> ring of integers: </em> given an algebraic number field \(K\), that is, an algebraic field extension \(\mathbb{Q}\subseteq K\), we define the ring of integers of \(K\), denoted \(\mathcal{O}_K\), to be all those \(\alpha\in K\) such that the minimal polynomial \(m_\alpha(x)\in\mathbb{Q}[x]\) of \(\alpha\) has integer coefficients. Notice that in the case where \(\mathbb{Q}=K\) is the trivial extension, the minimal polynomial of \(\alpha\in \mathbb{Q}\) is simply \(x-\alpha\), and therefore \(\mathcal{O}_\mathbb{Q}=\mathbb{Z}\). 
+            </p>
+            <p>
+                Let \(D\) be a square-free integer and consider the quadratic field \(K:=\mathbb{Q}(\sqrt{D})\). We will compute \(\mathcal{O}_K\). Explicitly, \(K=\{a+b\sqrt{D}:a,b\in\mathbb{Q}\}\), so by definition an element \(\alpha=a+b\sqrt{D}\) is an algebraic integer if and only if the minimal polynomial of \(\alpha\), \(m_\alpha(x)\) has integer coefficients.
+            </p>
+            <p>
+                Let \(\text{Aut}_\mathbb{Q}(K)\) be the group of field automorphisms \(f:K\to K\) such that \(f\mid_\mathbb{Q}=\text{id}_\mathbb{Q}\). Consider the automorphism \(\varphi\in\text{Aut}_\mathbb{Q}(K)\) defined by \(\sqrt{D}\mapsto-\sqrt{D}\). Since \(\varphi\) fixes \(\mathbb{Q}\), if \(r\) is a root of an irreducible polynomial in \(\mathbb{Q}[x]\), then so is \(\varphi(r)\). Therefore \(m_\alpha(x)\) has roots \(a+b\sqrt{D}\) and \(a-b\sqrt{D}\), i.e., 
+                
+                    $$\begin{aligned}
+                        m_\alpha(x)&=(x-(a+b\sqrt{D}))(x-(a-b\sqrt{D}))\\
+                        &=x^2-2ax+(a^2-b^2D).
+                    \end{aligned}$$
+        
+                This means that \(\alpha=a+b\sqrt{D}\in\mathcal{O}_K\) if and only if \(2a\in\mathbb{Z}\) and \((a^2-b^2D)\in\mathbb{Z}\).
+            </p>
+            <p>
+                Suppose then that \(m_\alpha(x)=x^2+Ax+B\) for \(A=-2a\in\mathbb{Z}\) and \(B=a^2-b^2D\in\mathbb{Z}\). Notice that \(2a\in\mathbb{Z}\) if and only if \(a\in\mathbb{Z}\) or \(a=\frac{2j+1}{2}\) for some \(j\in\mathbb{Z}\). Suppose first that \(a\in\mathbb{Z}\). Then \(b^2D=a^2-B\in\mathbb{Z}\). If \(b\not\in\mathbb{Z}\), then \(b=\frac{m}{n}\) so that \(\frac{m^2}{n^2}D=b^2D\in\mathbb{Z}\) which implies that \(n^2\) divides \(D\), a contradiction since \(D\) is square-free. Thus we must have \(b\in\mathbb{Z}\).
+            </p>
+            <p>
+                On the other hand, suppose that \(a=\frac{2j+1}{2}\). Then 
+
+                    $$B=\left(\frac{2j+1}{2}\right)^2-b^2D=\frac{4j^2+4j+1-4b^2D}{4}.$$
+
+                Observe that the right hand side of the above equation is an integer if and only if \(4j^2+4j+1-4b^2D\equiv 0(\text{mod }4)\) which is true if and only if \(4b^2D\equiv 1(\text{mod }4)\). Since \(D\) is square-free and \(4b^2D\) cannot be divisible by \(4\), it follows that \(b=\frac{c}{2^d}\) for some odd \(c\in\mathbb{Z}\) and \(d\in\mathbb{N}\). Therefore 
+
+                    $$4b^2D=4\frac{c^2}{2^{2d}}D=\frac{c^2D}{2^{2d-2}}=\left(\frac{c}{2^{d-1}}\right)^2D$$
+
+                and since \(c\) is odd and \(4b^2D\in\mathbb{Z}\), we must have \(d=1\) so that \(b=\frac{2k+1}{2}\) for some \(k\in\mathbb{Z}\). Therefore we get 
+
+                    $$\begin{aligned}
+                        B&=\left(\frac{2j+1}{2}\right)^2-\left(\frac{2k+1}{2}\right)^2D\\
+                        &=\frac{4j^2+4j+1-4k^2D-4kD-D}{4}\\
+                        &=\frac{4(j^2+j-k^2D-kD)+1-D}{4}
+                    \end{aligned}$$
+                    
+                and we see that the right hand side of the above equation is an integer if and only if \(D\equiv 1(\text{mod }4)\).
+            </p>
+            <p>
+                So far we have seen that \(m_\alpha(x)\in\mathbb{Z}[x]\) if and only if either \(a,b\in\mathbb{Z}\) or \(a=\frac{2j+1}{2}\) and \(b=\frac{2k+1}{2}\) for \(j,k\in\mathbb{Z}\), with the latter case occuring if and only if \(D\equiv 1(\text{mod }4)\). This allows us to conclude that for \(D\equiv 2,3(\text{mod }4)\) we have 
+
+                    $$\mathcal{O}_K=\mathbb{Z}[\sqrt{D}]:=\{a+b\sqrt{D}:a,b\in\mathbb{Z}\}.$$
+            </p>
+            <p>
+                We analyze the case \(D\equiv 1(\text{mod 4})\) further. By the work done above, we know that if \(\alpha\in\mathcal{O}_K\), then \(\alpha=\frac{u}{2}+\frac{v}{2}\sqrt{D}\) where \(u,v\in\mathbb{Z}\) have the same parity. Consider the invertible linear transformation \(\phi\) given by 
+
+                    $$\phi:\begin{cases}
+                        u&\mapsto 2u+v\\
+                        v&\mapsto v.
+                    \end{cases}$$
+
+                Then we have \(\phi\left(\frac{u}{2}+\frac{v}{2}\sqrt{D}\right)=\frac{2u+v}{2}+\frac{v}{2}\sqrt{D}=u+v\left(\frac{1+\sqrt{D}}{2}\right)\) so that 
+
+                    $$\mathcal{O}_K=\mathbb{Z}\left[\frac{1+\sqrt{D}}{2}\right]=\left\{a+b\left(\frac{1+\sqrt{D}}{2}\right):a,b\in\mathbb{Z}\right\}\supseteq\mathbb{Z}\left[\sqrt{D}\right].$$
+            </p>
+            <p>
+                In summary, we have seen that for a square-free integer \(D\), the ring of integers of the quadratic field \(K:=\mathbb{Q}(\sqrt{D})\) depends on the equivalence class of \(D\) modulo \(4\). Since \(D\) is square-free, \(D\equiv 0(\text{mod }4)\) doesn't occur and in the other cases we have 
+
+                    $$\mathcal{O}_K=\begin{cases}
+                        \mathbb{Z}\left[\sqrt{D}\right]&\text{if }D\equiv 2,3(\text{mod }4)\\
+                        \mathbb{Z}\left[\frac{1+\sqrt{D}}{2}\right]&\text{if }D\equiv 1(\text{mod }4)
+                    \end{cases}$$
+
+                concluding our investigation :-)
+            </p>
+            
+        </article> 
+
+    </body>
+
+</html>
