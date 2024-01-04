@@ -66,9 +66,17 @@ header {
     }
 
 
-
-
-
+/* Style of a full blog post */
+.blog_post {
+    background-color: #e1fdd5;
+    border: 5px solid #9cc2b8;
+    padding: 40px;
+    margin: 60px;
+    }
+.blog_post p {
+    line-height: 1.5;
+    text-indent: 40px;
+    }
 
 
 
